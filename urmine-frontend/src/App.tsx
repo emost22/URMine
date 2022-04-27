@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import Home from "./Routes/Home";
 import Login from "./Routes/Login";
 import Pokedex from "./Routes/Pokedex";
@@ -7,6 +8,7 @@ import Profile from "./Routes/Profile";
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/pokedex/:id" element={<Pokedex />} />
         <Route path="/pokedex" element={<Pokedex />} />
