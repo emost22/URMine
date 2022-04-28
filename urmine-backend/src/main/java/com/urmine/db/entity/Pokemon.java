@@ -16,6 +16,7 @@ public class Pokemon {
     Long pokemonId;
     String pokemonName;
     String kind;
+    String color;
     String description;
     Boolean isEvolution;
 
