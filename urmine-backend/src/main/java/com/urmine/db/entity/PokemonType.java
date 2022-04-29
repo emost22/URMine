@@ -14,5 +14,6 @@ public class PokemonType {
     Pokemon pokemon;
 
     @Id
+    Integer typeNumber;
     String pokemonType;
 }
