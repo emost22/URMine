@@ -1,7 +1,9 @@
 package com.urmine.db.data;
 
 import com.urmine.db.entity.Pokemon;
+import com.urmine.db.entity.PokemonEvolution;
 import com.urmine.db.entity.PokemonType;
+import com.urmine.db.repository.PokemonEvolutionRepository;
 import com.urmine.db.repository.PokemonRepository;
 import com.urmine.db.repository.PokemonTypeRepository;
 import org.junit.jupiter.api.Test;
@@ -46,6 +48,8 @@ public class DataSample {
     PokemonRepository pokemonRepository;
     @Autowired
     PokemonTypeRepository pokemonTypeRepository;
+    @Autowired
+    PokemonEvolutionRepository pokemonEvolutionRepository;
 
     @Test
     void 포켓몬_데이터_생성() {
@@ -288,6 +292,79 @@ public class DataSample {
                 pokemonType.setPokemonType(pokemonTypeList[id.intValue()].get(j));
                 pokemonTypeRepository.save(pokemonType);
             }
+        }
+    }
+
+    @Test
+    void 포켓몬_진화_생성() {
+        pokemonEvolutions[1] = new Evolution(1L, "일반", 2L, "일반", 3L);
+        pokemonEvolutions[2] = new Evolution(4L, "일반", 5L, "일반", 6L);
+        pokemonEvolutions[3] = new Evolution(7L, "일반", 8L, "일반", 9L);
+        pokemonEvolutions[4] = new Evolution(10L, "일반", 11L, "일반", 12L);
+        pokemonEvolutions[5] = new Evolution(13L, "일반", 14L, "일반", 15L);
+        pokemonEvolutions[6] = new Evolution(16L, "일반", 17L, "일반", 18L);
+        pokemonEvolutions[7] = new Evolution(19L, "일반", 20L, "X", -1L);
+        pokemonEvolutions[8] = new Evolution(21L, "일반", 22L, "X", -1L);
+        pokemonEvolutions[9] = new Evolution(23L, "일반", 24L, "X", -1L);
+        pokemonEvolutions[10] = new Evolution(25L, "천둥의돌", 26L, "X", -1L);
+        pokemonEvolutions[11] = new Evolution(27L, "일반", 28L, "X", -1L);
+        pokemonEvolutions[12] = new Evolution(29L, "일반", 30L, "달의돌", 31L);
+        pokemonEvolutions[13] = new Evolution(32L, "일반", 33L, "달의돌", 34L);
+        pokemonEvolutions[14] = new Evolution(35L, "달의돌", 36L, "X", -1L);
+        pokemonEvolutions[15] = new Evolution(37L, "불꽃의돌", 38L, "X", -1L);
+        pokemonEvolutions[16] = new Evolution(39L, "달의돌", 40L, "X", -1L);
+        pokemonEvolutions[17] = new Evolution(41L, "일반", 42L, "X", -1L);
+        pokemonEvolutions[18] = new Evolution(43L, "일반", 44L, "리프의돌", 45L);
+        pokemonEvolutions[19] = new Evolution(46L, "일반", 47L, "X", -1L);
+        pokemonEvolutions[20] = new Evolution(48L, "일반", 49L, "X", -1L);
+        pokemonEvolutions[21] = new Evolution(50L, "일반", 51L, "X", -1L);
+        pokemonEvolutions[22] = new Evolution(52L, "일반", 53L, "X", -1L);
+        pokemonEvolutions[23] = new Evolution(54L, "일반", 55L, "X", -1L);
+        pokemonEvolutions[24] = new Evolution(56L, "일반", 57L, "X", -1L);
+        pokemonEvolutions[25] = new Evolution(58L, "불꽃의돌", 59L, "X", -1L);
+        pokemonEvolutions[26] = new Evolution(60L, "일반", 61L, "물의돌", 62L);
+        pokemonEvolutions[27] = new Evolution(63L, "일반", 64L, "통신", 65L);
+        pokemonEvolutions[28] = new Evolution(66L, "일반", 67L, "통신", 68L);
+        pokemonEvolutions[29] = new Evolution(69L, "일반", 70L, "리프의돌", 71L);
+        pokemonEvolutions[30] = new Evolution(72L, "일반", 73L, "X", -1L);
+        pokemonEvolutions[31] = new Evolution(74L, "일반", 75L, "통신", 76L);
+        pokemonEvolutions[32] = new Evolution(77L, "일반", 78L, "X", -1L);
+        pokemonEvolutions[33] = new Evolution(79L, "일반", 80L, "X", -1L);
+        pokemonEvolutions[34] = new Evolution(81L, "일반", 82L, "X", -1L);
+        pokemonEvolutions[35] = new Evolution(84L, "일반", 85L, "X", -1L);
+        pokemonEvolutions[36] = new Evolution(86L, "일반", 87L, "X", -1L);
+        pokemonEvolutions[37] = new Evolution(88L, "일반", 89L, "X", -1L);
+        pokemonEvolutions[38] = new Evolution(90L, "물의돌", 91L, "X", -1L);
+        pokemonEvolutions[39] = new Evolution(92L, "일반", 93L, "통신", 94L);
+        pokemonEvolutions[40] = new Evolution(96L, "일반", 97L, "X", -1L);
+        pokemonEvolutions[41] = new Evolution(98L, "일반", 99L, "X", -1L);
+        pokemonEvolutions[42] = new Evolution(100L, "일반", 101L, "X", -1L);
+        pokemonEvolutions[43] = new Evolution(102L, "리프의돌", 103L, "X", -1L);
+        pokemonEvolutions[44] = new Evolution(104L, "일반", 105L, "X", -1L);
+        pokemonEvolutions[45] = new Evolution(109L, "일반", 110L, "X", -1L);
+        pokemonEvolutions[46] = new Evolution(111L, "일반", 112L, "X", -1L);
+        pokemonEvolutions[47] = new Evolution(116L, "일반", 117L, "X", -1L);
+        pokemonEvolutions[48] = new Evolution(118L, "일반", 119L, "X", -1L);
+        pokemonEvolutions[49] = new Evolution(120L, "물의돌", 121L, "X", -1L);
+        pokemonEvolutions[50] = new Evolution(129L, "일반", 130L, "X", -1L);
+        pokemonEvolutions[51] = new Evolution(133L, "물의돌", 134L, "X", -1L);
+        pokemonEvolutions[52] = new Evolution(133L, "천둥의돌", 135L, "X", -1L);
+        pokemonEvolutions[53] = new Evolution(133L, "불꽃의돌", 136L, "X", -1L);
+        pokemonEvolutions[54] = new Evolution(138L, "일반", 139L, "X", -1L);
+        pokemonEvolutions[55] = new Evolution(140L, "일반", 141L, "X", -1L);
+        pokemonEvolutions[56] = new Evolution(147L, "일반", 148L, "일반", 149L);
+
+        for (int i = 1; i < 57; i++) {
+            Pokemon pokemon = pokemonRepository.findById(pokemonEvolutions[i].pokemonId).orElse(null);
+
+            PokemonEvolution pokemonEvolution = new PokemonEvolution();
+            pokemonEvolution.setPokemon(pokemon);
+            pokemonEvolution.setFirstMethod(pokemonEvolutions[i].firstMethod);
+            pokemonEvolution.setFirstEvolutionId(pokemonEvolutions[i].firstEvolutionId);
+            pokemonEvolution.setSecondMethod(pokemonEvolutions[i].secondMethod);
+            pokemonEvolution.setSecondEvolutionId(pokemonEvolutions[i].secondEvolutionId);
+
+            pokemonEvolutionRepository.save(pokemonEvolution);
         }
     }
     // TODO Add more
