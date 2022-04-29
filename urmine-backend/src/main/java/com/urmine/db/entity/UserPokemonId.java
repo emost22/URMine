@@ -10,6 +10,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserPokemonId implements Serializable {
-    User user;
+    String user;
     PokemonPicture pokemonPicture;
 }
