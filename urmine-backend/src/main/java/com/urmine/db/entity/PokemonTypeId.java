@@ -11,5 +11,5 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class PokemonTypeId implements Serializable {
     Long pokemon;
-    String pokemonType;
+    Integer typeNumber;
 }
