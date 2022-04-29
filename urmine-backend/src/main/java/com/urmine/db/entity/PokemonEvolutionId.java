@@ -10,6 +10,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PokemonEvolutionId implements Serializable {
-    Pokemon pokemon;
+    Long pokemon;
     String firstMethod;
 }
