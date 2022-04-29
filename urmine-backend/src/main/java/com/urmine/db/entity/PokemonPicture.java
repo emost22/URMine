@@ -16,7 +16,8 @@ public class PokemonPicture {
     Pokemon pokemon;
     @Id
     Integer pokemonNum;
-    String pokemonImageUrl;
+    String pokemonGrayImageUrl;
+    String pokemonColorImageUrl;
 
     @OneToMany(mappedBy = "pokemonPicture", cascade = CascadeType.ALL)
     List<UserPokemon> userPokemonList = new ArrayList<>();
