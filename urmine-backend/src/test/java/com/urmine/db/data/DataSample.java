@@ -257,10 +257,9 @@ public class DataSample {
         pokemonTypeList[150].add("에스퍼");
         pokemonTypeList[151].add("에스퍼");
 
-        for (Long id = 1L; id <= 151; id++) {
+        for (Long id = 1L; id <= 151L; id++) {
             for (int j = 0; j < pokemonTypeList[id.intValue()].size(); j++) {
-                Pokemon pokemon = new Pokemon();
-                pokemon.setPokemonId(id);
+                Pokemon pokemon = pokemonRepository.findById(id).orElse(null);
 
                 PokemonType pokemonType = new PokemonType();
                 pokemonType.setPokemon(pokemon);
