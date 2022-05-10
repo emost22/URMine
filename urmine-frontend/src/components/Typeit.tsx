@@ -3,7 +3,7 @@ import TypeIt from "typeit-react";
 
 const Container = styled.section`
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-color: #393939;
   display: flex;
   justify-content: center;
