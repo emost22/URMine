@@ -1,5 +1,7 @@
 package com.urmine.api.service;
 
+import com.urmine.db.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +28,7 @@ public class UserServiceImpl implements UserService {
     private String kakaoUserInfoUri;
     @Value("Bearer")
     private String tokenType;
+    
+    @Autowired
+    private UserRepository userRepository;
 }
