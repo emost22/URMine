@@ -1,5 +1,11 @@
+import Typeit from "../components/Typeit";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Typeit />
+    </div>
+  );
 }
 
 export default Home;

@@ -7,7 +7,7 @@ const Head = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 150px;
+  padding: 0 10vw;
 `;
 
 const Logo = styled.img`
@@ -36,7 +36,9 @@ const Icon = styled.img`
 `;
 
 const IconDesc = styled.span`
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
+  width: 40px;
 `;
 
 function Header() {
