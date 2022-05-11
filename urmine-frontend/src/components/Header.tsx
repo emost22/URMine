@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Head = styled.header`
   width: 100vw;
-  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +11,7 @@ const Head = styled.header`
 
 const Logo = styled.img`
   width: 150px;
+  padding: 15px 0;
 `;
 
 const Icons = styled.div`

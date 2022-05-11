@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import Typeit from "../components/Typeit";
 
 const Container = styled.div`
-  background-color: burlywood;
   flex: 1;
   position: relative;
 `;
@@ -16,6 +16,7 @@ const LoginImg = styled.img`
 function Login() {
   return (
     <Container>
+      <Typeit />
       <LoginImg src="/images/kakao_login_large_wide.png" alt="login" />
     </Container>
   );
