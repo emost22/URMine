@@ -5,6 +5,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.AuthorizationScope;
 import springfox.documentation.service.SecurityReference;
+import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
@@ -20,6 +21,15 @@ public class SwaggerConfig {
     public static final String SECURITY_SCHEMA_NAME = "JWT";
     public static final String AUTHORIZATION_SCOPE_GLOBAL = "global";
     public static final String AUTHORIZATION_SCOPE_GLOBAL_DESC = "accessEverything";
+
+    private SecurityContext securityContext() {
+        /*
+         * 보안 정보를 담아 전송하는 메소드
+         */
+        return SecurityContext.builder()
+                .securityReferences(defaultAuth())
+                .build();
+    }
 
     private List<SecurityReference> defaultAuth() {
         /*
