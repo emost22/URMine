@@ -28,7 +28,16 @@ public class UserServiceImpl implements UserService {
     private String kakaoUserInfoUri;
     @Value("Bearer")
     private String tokenType;
-    
+
     @Autowired
     private UserRepository userRepository;
+
+    @Override
+    public String getKakaoLoginPage() {
+        /*
+         * 카카오 로그인 페이지 URL을 반환하는 메소드
+         */
+
+        return kakaoAuthorizationUri + "?client_id=" + kakaoClientId + "&redirect_uri=" + kakaoRedirectUri + "&response_type=code";
+    }
 }
