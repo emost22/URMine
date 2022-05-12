@@ -3,6 +3,7 @@ package com.urmine.config;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.AuthorizationScope;
 import springfox.documentation.service.SecurityReference;
 import springfox.documentation.spi.service.contexts.SecurityContext;
@@ -21,6 +22,13 @@ public class SwaggerConfig {
     public static final String SECURITY_SCHEMA_NAME = "JWT";
     public static final String AUTHORIZATION_SCOPE_GLOBAL = "global";
     public static final String AUTHORIZATION_SCOPE_GLOBAL_DESC = "accessEverything";
+
+    private ApiKey apiKey() {
+        /*
+         * Swagger에서 JWT 인증을 추가하는 메소드
+         */
+        return new ApiKey(SECURITY_SCHEMA_NAME, "Authorization", "header");
+    }
 
     private SecurityContext securityContext() {
         /*
