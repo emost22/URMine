@@ -1,10 +1,18 @@
 package com.urmine.api.service;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.urmine.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 
 /*
@@ -51,7 +59,29 @@ public class UserServiceImpl implements UserService {
         String accessToken = "";
         String refreshToken = "";
 
-        // TODO Add more
+        try {
+            URL url = new URL(kakaoTokenUri);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            conn.setRequestMethod(kakaoAuthenticationMethod);
+            conn.setDoOutput(true);
+
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+            StringBuilder sb = new StringBuilder();
+            sb.append("grant_type=" + kakaoGrantType);
+            sb.append("&client_id=" + kakaoClientId);
+            sb.append("&client_secret=" + kakaoClientSecret);
+            sb.append("&redirect_uri=" + kakaoRedirectUri);
+            sb.append("&code=" + code);
+            bw.write(sb.toString());
+            bw.flush();
+
+            // TODO Add more
+
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         HashMap<String, String> tokens = new HashMap<>();
         tokens.put("accessToken", accessToken);
