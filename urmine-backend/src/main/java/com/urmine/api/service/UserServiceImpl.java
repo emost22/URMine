@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+
 /*
  * 유저 정보 관리를 위한 ServiceImpl
  */
@@ -39,5 +41,22 @@ public class UserServiceImpl implements UserService {
          */
 
         return kakaoAuthorizationUri + "?client_id=" + kakaoClientId + "&redirect_uri=" + kakaoRedirectUri + "&response_type=code";
+    }
+
+    @Override
+    public HashMap<String, String> getKakaoTokens(String code) {
+        /*
+         * code를 이용하여 accessToken, refreshToken을 받아오는 메소드
+         */
+        String accessToken = "";
+        String refreshToken = "";
+
+        // TODO Add more
+
+        HashMap<String, String> tokens = new HashMap<>();
+        tokens.put("accessToken", accessToken);
+        tokens.put("refreshToken", refreshToken);
+
+        return tokens;
     }
 }
