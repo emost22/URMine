@@ -76,8 +76,21 @@ public class UserServiceImpl implements UserService {
             bw.write(sb.toString());
             bw.flush();
 
-            // TODO Add more
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = "";
+            String result = "";
 
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+
+            JsonParser parser = new JsonParser();
+            JsonElement element = parser.parse(result);
+
+            accessToken = element.getAsJsonObject().get("access_token").getAsString();
+            refreshToken = element.getAsJsonObject().get("refresh_token").getAsString();
+
+            br.close();
             bw.close();
         } catch (Exception e) {
             e.printStackTrace();
