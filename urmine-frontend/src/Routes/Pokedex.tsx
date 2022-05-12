@@ -1,5 +1,11 @@
+import Search from "../components/Search";
+
 function Pokedex() {
-  return <div>Pokedex</div>;
+  return (
+    <>
+      <Search></Search>
+    </>
+  );
 }
 
 export default Pokedex;
