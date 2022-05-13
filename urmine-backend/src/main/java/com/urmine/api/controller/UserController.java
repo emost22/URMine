@@ -57,6 +57,18 @@ public class UserController {
 
         // 받은 유저 정보의 accountEmail을 이용하여 이미 가입한 유저인지 확인한다. (확인한 유저 객체를 받아온다.)
         UserGetRes findUser = userService.findUserByAccountEmail(userGetRes.getAccountEmail());
+        UserGetRes newUserGetRes = null;
+        if (findUser == null) {
+            // 유저 정보가 없으므로 회원 가입
+            newUserGetRes = userService.insertUser(userGetRes);
+            return new ResponseEntity<>(newUserGetRes, HttpStatus.CREATED);
+        }
+        else{
+            // 유저 정보가 있으므로 토큰 갱신
+            newUserGetRes = userService.updateUserToken(userGetRes.getAccountEmail(), tokens);
+            return new ResponseEntity<>(newUserGetRes, HttpStatus.OK);
+        }
+    }
 
         // TODO Add more
 
