@@ -39,7 +39,7 @@ function Home() {
       <Typeit />
       <main>
         {infoList.map((info) => (
-          <HomeContainer {...info} />
+          <HomeContainer key={info.title} {...info} />
         ))}
       </main>
     </div>
