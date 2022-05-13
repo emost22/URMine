@@ -170,9 +170,7 @@ public class UserServiceImpl implements UserService {
          * 유저가 회원가입하여 DB에 저장하는 메소드
          */
 
-        // TODO Add more
-
-        return null;
+        return UserGetRes.of(userRepository.save(userGetRes.toUser()));
     }
 
     @Override
