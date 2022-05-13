@@ -179,8 +179,10 @@ public class UserServiceImpl implements UserService {
          * 유저 토근을 갱신하는 메소드
          */
 
-        // TODO Add more
+        User user = userRepository.findUserByAccountEmail(accountEmail).orElse(null);
+        user.setAccessToken(tokens.get("accessToken"));
+        user.setRefreshToken(tokens.get("refreshToken"));
 
-        return null;
+        return UserGetRes.of(userRepository.save(user));
     }
 }
