@@ -3,9 +3,12 @@ package com.urmine.api.service;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.urmine.api.response.UserGetRes;
+import com.urmine.db.entity.User;
 import com.urmine.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -113,7 +116,28 @@ public class UserServiceImpl implements UserService {
         JsonElement element = null;
         String email = "";
 
-        // TODO Add more
+        try {
+            URL url = new URL(kakaoUserInfoUri);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            conn.setRequestMethod(kakaoAuthenticationMethod);
+            conn.setDoOutput(true);
+            conn.setRequestProperty("Authorization", tokenType + " " + tokens.get("accessToken"));
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = "";
+            String result = "";
+
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+
+            // TODO Add more
+
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
