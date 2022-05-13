@@ -2,6 +2,7 @@ package com.urmine.api.service;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.urmine.api.response.UserGetRes;
 import com.urmine.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -101,5 +102,19 @@ public class UserServiceImpl implements UserService {
         tokens.put("refreshToken", refreshToken);
 
         return tokens;
+    }
+
+    @Override
+    public UserGetRes getUserInfo(HashMap<String, String> tokens) {
+        /*
+         * 카카오에서 유저 정보를 가져와 반환하는 메소드
+         */
+
+        JsonElement element = null;
+        String email = "";
+
+        // TODO Add more
+
+        return null;
     }
 }
