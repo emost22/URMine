@@ -1,5 +1,7 @@
 package com.urmine.api.service;
 
+import com.urmine.api.response.UserGetRes;
+
 import java.util.HashMap;
 
 /*
@@ -8,4 +10,8 @@ import java.util.HashMap;
 public interface UserService {
     public String getKakaoLoginPage();
     public HashMap<String, String> getKakaoTokens(String code);
+    public UserGetRes getUserInfo(HashMap<String, String> tokens);
+    public UserGetRes findUserByAccountEmail(String accountEmail);
+    public UserGetRes insertUser(UserGetRes userGetRes);
+    public UserGetRes updateUserToken(String accountEmail, HashMap<String, String> tokens);
 }

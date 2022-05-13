@@ -1,5 +1,6 @@
 package com.urmine.api.controller;
 
+import com.urmine.api.response.UserGetRes;
 import com.urmine.api.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,5 +33,21 @@ public class UserController {
          */
 
         return new ResponseEntity<>(userService.getKakaoLoginPage(), HttpStatus.OK);
+    }
+
+    @GetMapping("/kakao/login")
+    @ApiOperation(value = "토근을 받아 회원 가입 or 로그인", notes = "카카오 로그인을 해서 받은 code로 토큰을 받고, 회원가입 or 로그인을 시도하는 메소드")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "정상적으로 로그인 되었음"),
+            @ApiResponse(code = 201, message = "정상적으로 회원가입 되었음")
+    })
+    public ResponseEntity<UserGetRes> getTokensAndSignUpOrLogin(@RequestParam String code) throws Exception {
+        /*
+         * 카카오 로그인을 위해 토큰을 받아오고, 회원가입 or 로그인을 하는 메소드
+         */
+
+        // TODO Add more
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
