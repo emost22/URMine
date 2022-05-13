@@ -132,14 +132,23 @@ public class UserServiceImpl implements UserService {
                 result += line;
             }
 
-            // TODO Add more
+            JsonParser parser = new JsonParser();
+            element = parser.parse(result);
+
+            boolean hasEmail = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("email") != null;
+            if (hasEmail) {
+                email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("email").getAsString();
+            }
+            else {
+                email = "user@gmail.com";
+            }
 
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return UserGetRes.of(element, email, tokens);
     }
 
     @Override

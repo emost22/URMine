@@ -51,6 +51,9 @@ public class UserController {
         // code를 이용하여 accessToken, refreshToken을 받아온다.
         HashMap<String, String> tokens = userService.getKakaoTokens(code);
 
+        // 받은 tokens를 이용하여 유저 정보를 받아온다.
+        UserGetRes userGetRes = userService.getUserInfo(tokens);
+
         // TODO Add more
 
         return new ResponseEntity<>(HttpStatus.OK);
