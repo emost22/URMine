@@ -117,4 +117,15 @@ public class UserServiceImpl implements UserService {
 
         return null;
     }
+
+    @Override
+    public UserGetRes findUserByAccountEmail(String accountEmail) {
+        /*
+         * accountEmail으로 User를 검색하여 이미 존재하는 유저인지 검색하는 메소드
+         */
+
+        // TODO Add more
+
+        return null;
+    }
 }
