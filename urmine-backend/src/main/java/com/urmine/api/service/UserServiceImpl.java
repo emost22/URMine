@@ -139,4 +139,15 @@ public class UserServiceImpl implements UserService {
 
         return null;
     }
+
+    @Override
+    public UserGetRes updateUserToken(String accountEmail, HashMap<String, String> tokens) {
+        /*
+         * 유저 토근을 갱신하는 메소드
+         */
+
+        // TODO Add more
+
+        return null;
+    }
 }
