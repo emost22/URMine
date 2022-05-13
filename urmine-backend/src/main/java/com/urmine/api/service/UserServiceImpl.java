@@ -128,4 +128,15 @@ public class UserServiceImpl implements UserService {
 
         return null;
     }
+
+    @Override
+    public UserGetRes insertUser(UserGetRes userGetRes) {
+        /*
+         * 유저가 회원가입하여 DB에 저장하는 메소드
+         */
+
+        // TODO Add more
+
+        return null;
+    }
 }

@@ -12,4 +12,5 @@ public interface UserService {
     public HashMap<String, String> getKakaoTokens(String code);
     public UserGetRes getUserInfo(HashMap<String, String> tokens);
     public UserGetRes findUserByAccountEmail(String accountEmail);
+    public UserGetRes insertUser(UserGetRes userGetRes);
 }
