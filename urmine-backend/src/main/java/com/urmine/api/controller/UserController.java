@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+
 /*
  * 유저 정보 관리를 위한 RestController
  */
@@ -45,6 +47,9 @@ public class UserController {
         /*
          * 카카오 로그인을 위해 토큰을 받아오고, 회원가입 or 로그인을 하는 메소드
          */
+
+        // code를 이용하여 accessToken, refreshToken을 받아온다.
+        HashMap<String, String> tokens = userService.getKakaoTokens(code);
 
         // TODO Add more
 
