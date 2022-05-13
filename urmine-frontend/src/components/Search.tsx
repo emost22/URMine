@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.section`
   width: 100%;
-  height: 200px;
+  height: 120px;
   background-color: #393939;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ const Icon = styled.img`
 const Input = styled.input`
   width: 600px;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 10px 50px 10px 20px;
   border: none;
   background-color: black;
   color: white;
@@ -84,7 +84,7 @@ function Search() {
         <Span>타입별 검색</Span>
         <IconBox>
           {Icons.map((icon) => (
-            <Icon src={icon.src} alt={icon.name} />
+            <Icon key={icon.name} src={icon.src} alt={icon.name} />
           ))}
         </IconBox>
       </Box>
