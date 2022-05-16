@@ -69,9 +69,4 @@ public class UserController {
             return new ResponseEntity<>(newUserGetRes, HttpStatus.OK);
         }
     }
-
-        // TODO Add more
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 }
