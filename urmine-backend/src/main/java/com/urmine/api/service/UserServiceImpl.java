@@ -157,9 +157,11 @@ public class UserServiceImpl implements UserService {
          * accountEmail으로 User를 검색하여 이미 존재하는 유저인지 검색하는 메소드
          */
 
-        // TODO Add more
+        User user = userRepository.findUserByAccountEmail(accountEmail).orElse(null);
 
-        return null;
+        if (user == null) return null;
+
+        return UserGetRes.of(user);
     }
 
     @Override

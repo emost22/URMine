@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.HashMap;
 
@@ -53,6 +54,9 @@ public class UserController {
 
         // 받은 tokens를 이용하여 유저 정보를 받아온다.
         UserGetRes userGetRes = userService.getUserInfo(tokens);
+
+        // 받은 유저 정보의 accountEmail을 이용하여 이미 가입한 유저인지 확인한다. (확인한 유저 객체를 받아온다.)
+        UserGetRes findUser = userService.findUserByAccountEmail(userGetRes.getAccountEmail());
 
         // TODO Add more
 
