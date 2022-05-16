@@ -56,352 +56,352 @@ public class DataSample {
     @Autowired
     BadgeRepository badgeRepository;
 
-    @Test
-    void 포켓몬_데이터_생성() {
-        for (Long id = 1L; id <= 151; id++) {
-            pokemon.setPokemonId(id);
-            pokemon.setPokemonName(pokemonNames[id.intValue()]);
-            pokemon.setKind(kinds[id.intValue()]);
-            pokemon.setColor(colors[id.intValue()]);
-            pokemon.setDescription(descriptions[id.intValue()]);
-            pokemon.setIsEvolution(isEvolutions[id.intValue()]);
-
-            pokemonRepository.save(pokemon);
-        }
-    }
-
-    @Test
-    void 포켓몬_타입_생성() {
-        for (int i = 1; i <= 151; i++) pokemonTypeList[i] = new ArrayList<>();
-        pokemonTypeList[1].add("풀");
-        pokemonTypeList[1].add("독");
-        pokemonTypeList[2].add("풀");
-        pokemonTypeList[2].add("독");
-        pokemonTypeList[3].add("풀");
-        pokemonTypeList[3].add("독");
-        pokemonTypeList[4].add("불꽃");
-        pokemonTypeList[5].add("불꽃");
-        pokemonTypeList[6].add("불꽃");
-        pokemonTypeList[6].add("비행");
-        pokemonTypeList[7].add("물");
-        pokemonTypeList[8].add("물");
-        pokemonTypeList[9].add("물");
-        pokemonTypeList[10].add("벌레");
-        pokemonTypeList[11].add("벌레");
-        pokemonTypeList[12].add("벌레");
-        pokemonTypeList[12].add("비행");
-        pokemonTypeList[13].add("벌레");
-        pokemonTypeList[13].add("독");
-        pokemonTypeList[14].add("벌레");
-        pokemonTypeList[14].add("독");
-        pokemonTypeList[15].add("벌레");
-        pokemonTypeList[15].add("독");
-        pokemonTypeList[16].add("노말");
-        pokemonTypeList[16].add("비행");
-        pokemonTypeList[17].add("노말");
-        pokemonTypeList[17].add("비행");
-        pokemonTypeList[18].add("노말");
-        pokemonTypeList[18].add("비행");
-        pokemonTypeList[19].add("노말");
-        pokemonTypeList[20].add("노말");
-        pokemonTypeList[21].add("노말");
-        pokemonTypeList[21].add("비행");
-        pokemonTypeList[22].add("노말");
-        pokemonTypeList[22].add("비행");
-        pokemonTypeList[23].add("독");
-        pokemonTypeList[24].add("독");
-        pokemonTypeList[25].add("전기");
-        pokemonTypeList[26].add("전기");
-        pokemonTypeList[27].add("땅");
-        pokemonTypeList[28].add("땅");
-        pokemonTypeList[29].add("독");
-        pokemonTypeList[30].add("독");
-        pokemonTypeList[31].add("독");
-        pokemonTypeList[31].add("땅");
-        pokemonTypeList[32].add("독");
-        pokemonTypeList[33].add("독");
-        pokemonTypeList[34].add("독");
-        pokemonTypeList[34].add("땅");
-        pokemonTypeList[35].add("노말");
-        pokemonTypeList[36].add("노말");
-        pokemonTypeList[37].add("불꽃");
-        pokemonTypeList[38].add("불꽃");
-        pokemonTypeList[39].add("노말");
-        pokemonTypeList[40].add("노말");
-        pokemonTypeList[41].add("독");
-        pokemonTypeList[41].add("비행");
-        pokemonTypeList[42].add("독");
-        pokemonTypeList[42].add("비행");
-        pokemonTypeList[43].add("풀");
-        pokemonTypeList[43].add("독");
-        pokemonTypeList[44].add("풀");
-        pokemonTypeList[44].add("독");
-        pokemonTypeList[45].add("풀");
-        pokemonTypeList[45].add("독");
-        pokemonTypeList[46].add("벌레");
-        pokemonTypeList[46].add("풀");
-        pokemonTypeList[47].add("벌레");
-        pokemonTypeList[47].add("풀");
-        pokemonTypeList[48].add("벌레");
-        pokemonTypeList[48].add("독");
-        pokemonTypeList[49].add("벌레");
-        pokemonTypeList[49].add("독");
-        pokemonTypeList[50].add("땅");
-        pokemonTypeList[51].add("땅");
-        pokemonTypeList[52].add("노말");
-        pokemonTypeList[53].add("노말");
-        pokemonTypeList[54].add("물");
-        pokemonTypeList[55].add("물");
-        pokemonTypeList[56].add("격투");
-        pokemonTypeList[57].add("격투");
-        pokemonTypeList[58].add("불꽃");
-        pokemonTypeList[59].add("불꽃");
-        pokemonTypeList[60].add("물");
-        pokemonTypeList[61].add("물");
-        pokemonTypeList[62].add("물");
-        pokemonTypeList[62].add("격투");
-        pokemonTypeList[63].add("에스퍼");
-        pokemonTypeList[64].add("에스퍼");
-        pokemonTypeList[65].add("에스퍼");
-        pokemonTypeList[66].add("격투");
-        pokemonTypeList[67].add("격투");
-        pokemonTypeList[68].add("격투");
-        pokemonTypeList[69].add("풀");
-        pokemonTypeList[69].add("독");
-        pokemonTypeList[70].add("풀");
-        pokemonTypeList[70].add("독");
-        pokemonTypeList[71].add("풀");
-        pokemonTypeList[71].add("독");
-        pokemonTypeList[72].add("물");
-        pokemonTypeList[72].add("독");
-        pokemonTypeList[73].add("물");
-        pokemonTypeList[73].add("독");
-        pokemonTypeList[74].add("바위");
-        pokemonTypeList[74].add("땅");
-        pokemonTypeList[75].add("바위");
-        pokemonTypeList[75].add("땅");
-        pokemonTypeList[76].add("바위");
-        pokemonTypeList[76].add("땅");
-        pokemonTypeList[77].add("불꽃");
-        pokemonTypeList[78].add("불꽃");
-        pokemonTypeList[79].add("물");
-        pokemonTypeList[79].add("에스퍼");
-        pokemonTypeList[80].add("물");
-        pokemonTypeList[80].add("에스퍼");
-        pokemonTypeList[81].add("전기");
-        pokemonTypeList[82].add("전기");
-        pokemonTypeList[83].add("노말");
-        pokemonTypeList[83].add("비행");
-        pokemonTypeList[84].add("노말");
-        pokemonTypeList[84].add("비행");
-        pokemonTypeList[85].add("노말");
-        pokemonTypeList[85].add("비행");
-        pokemonTypeList[86].add("물");
-        pokemonTypeList[87].add("물");
-        pokemonTypeList[87].add("얼음");
-        pokemonTypeList[88].add("독");
-        pokemonTypeList[89].add("독");
-        pokemonTypeList[90].add("물");
-        pokemonTypeList[91].add("물");
-        pokemonTypeList[91].add("얼음");
-        pokemonTypeList[92].add("고스트");
-        pokemonTypeList[92].add("독");
-        pokemonTypeList[93].add("고스트");
-        pokemonTypeList[93].add("독");
-        pokemonTypeList[94].add("고스트");
-        pokemonTypeList[94].add("독");
-        pokemonTypeList[95].add("바위");
-        pokemonTypeList[95].add("땅");
-        pokemonTypeList[96].add("에스퍼");
-        pokemonTypeList[97].add("에스퍼");
-        pokemonTypeList[98].add("물");
-        pokemonTypeList[99].add("물");
-        pokemonTypeList[100].add("전기");
-        pokemonTypeList[101].add("전기");
-        pokemonTypeList[102].add("풀");
-        pokemonTypeList[102].add("에스퍼");
-        pokemonTypeList[103].add("풀");
-        pokemonTypeList[103].add("에스퍼");
-        pokemonTypeList[104].add("땅");
-        pokemonTypeList[105].add("땅");
-        pokemonTypeList[106].add("격투");
-        pokemonTypeList[107].add("격투");
-        pokemonTypeList[108].add("노말");
-        pokemonTypeList[109].add("독");
-        pokemonTypeList[110].add("독");
-        pokemonTypeList[111].add("땅");
-        pokemonTypeList[111].add("바위");
-        pokemonTypeList[112].add("땅");
-        pokemonTypeList[112].add("바위");
-        pokemonTypeList[113].add("노말");
-        pokemonTypeList[114].add("풀");
-        pokemonTypeList[115].add("노말");
-        pokemonTypeList[116].add("물");
-        pokemonTypeList[117].add("물");
-        pokemonTypeList[118].add("물");
-        pokemonTypeList[119].add("물");
-        pokemonTypeList[120].add("물");
-        pokemonTypeList[121].add("물");
-        pokemonTypeList[121].add("에스퍼");
-        pokemonTypeList[122].add("에스퍼");
-        pokemonTypeList[123].add("벌레");
-        pokemonTypeList[123].add("비행");
-        pokemonTypeList[124].add("얼음");
-        pokemonTypeList[124].add("에스퍼");
-        pokemonTypeList[125].add("전기");
-        pokemonTypeList[126].add("불꽃");
-        pokemonTypeList[127].add("벌레");
-        pokemonTypeList[128].add("노말");
-        pokemonTypeList[129].add("물");
-        pokemonTypeList[130].add("물");
-        pokemonTypeList[130].add("비행");
-        pokemonTypeList[131].add("물");
-        pokemonTypeList[131].add("얼음");
-        pokemonTypeList[132].add("노말");
-        pokemonTypeList[133].add("노말");
-        pokemonTypeList[134].add("물");
-        pokemonTypeList[135].add("전기");
-        pokemonTypeList[136].add("불꽃");
-        pokemonTypeList[137].add("노말");
-        pokemonTypeList[138].add("바위");
-        pokemonTypeList[138].add("물");
-        pokemonTypeList[139].add("바위");
-        pokemonTypeList[139].add("물");
-        pokemonTypeList[140].add("바위");
-        pokemonTypeList[140].add("물");
-        pokemonTypeList[141].add("바위");
-        pokemonTypeList[141].add("물");
-        pokemonTypeList[142].add("바위");
-        pokemonTypeList[142].add("비행");
-        pokemonTypeList[143].add("노말");
-        pokemonTypeList[144].add("얼음");
-        pokemonTypeList[144].add("비행");
-        pokemonTypeList[145].add("전기");
-        pokemonTypeList[145].add("비행");
-        pokemonTypeList[146].add("불꽃");
-        pokemonTypeList[146].add("비행");
-        pokemonTypeList[147].add("드래곤");
-        pokemonTypeList[148].add("드래곤");
-        pokemonTypeList[149].add("드래곤");
-        pokemonTypeList[149].add("비행");
-        pokemonTypeList[150].add("에스퍼");
-        pokemonTypeList[151].add("에스퍼");
-
-        for (Long id = 1L; id <= 151L; id++) {
-            for (int j = 0; j < pokemonTypeList[id.intValue()].size(); j++) {
-                Pokemon pokemon = pokemonRepository.findById(id).orElse(null);
-
-                PokemonType pokemonType = new PokemonType();
-                pokemonType.setPokemon(pokemon);
-                pokemonType.setTypeNumber(j + 1);
-                pokemonType.setPokemonType(pokemonTypeList[id.intValue()].get(j));
-                pokemonTypeRepository.save(pokemonType);
-            }
-        }
-    }
-
-    @Test
-    void 포켓몬_진화_생성() {
-        pokemonEvolutions[1] = new Evolution(1L, "일반", 2L, "일반", 3L);
-        pokemonEvolutions[2] = new Evolution(4L, "일반", 5L, "일반", 6L);
-        pokemonEvolutions[3] = new Evolution(7L, "일반", 8L, "일반", 9L);
-        pokemonEvolutions[4] = new Evolution(10L, "일반", 11L, "일반", 12L);
-        pokemonEvolutions[5] = new Evolution(13L, "일반", 14L, "일반", 15L);
-        pokemonEvolutions[6] = new Evolution(16L, "일반", 17L, "일반", 18L);
-        pokemonEvolutions[7] = new Evolution(19L, "일반", 20L, "X", -1L);
-        pokemonEvolutions[8] = new Evolution(21L, "일반", 22L, "X", -1L);
-        pokemonEvolutions[9] = new Evolution(23L, "일반", 24L, "X", -1L);
-        pokemonEvolutions[10] = new Evolution(25L, "천둥의돌", 26L, "X", -1L);
-        pokemonEvolutions[11] = new Evolution(27L, "일반", 28L, "X", -1L);
-        pokemonEvolutions[12] = new Evolution(29L, "일반", 30L, "달의돌", 31L);
-        pokemonEvolutions[13] = new Evolution(32L, "일반", 33L, "달의돌", 34L);
-        pokemonEvolutions[14] = new Evolution(35L, "달의돌", 36L, "X", -1L);
-        pokemonEvolutions[15] = new Evolution(37L, "불꽃의돌", 38L, "X", -1L);
-        pokemonEvolutions[16] = new Evolution(39L, "달의돌", 40L, "X", -1L);
-        pokemonEvolutions[17] = new Evolution(41L, "일반", 42L, "X", -1L);
-        pokemonEvolutions[18] = new Evolution(43L, "일반", 44L, "리프의돌", 45L);
-        pokemonEvolutions[19] = new Evolution(46L, "일반", 47L, "X", -1L);
-        pokemonEvolutions[20] = new Evolution(48L, "일반", 49L, "X", -1L);
-        pokemonEvolutions[21] = new Evolution(50L, "일반", 51L, "X", -1L);
-        pokemonEvolutions[22] = new Evolution(52L, "일반", 53L, "X", -1L);
-        pokemonEvolutions[23] = new Evolution(54L, "일반", 55L, "X", -1L);
-        pokemonEvolutions[24] = new Evolution(56L, "일반", 57L, "X", -1L);
-        pokemonEvolutions[25] = new Evolution(58L, "불꽃의돌", 59L, "X", -1L);
-        pokemonEvolutions[26] = new Evolution(60L, "일반", 61L, "물의돌", 62L);
-        pokemonEvolutions[27] = new Evolution(63L, "일반", 64L, "통신", 65L);
-        pokemonEvolutions[28] = new Evolution(66L, "일반", 67L, "통신", 68L);
-        pokemonEvolutions[29] = new Evolution(69L, "일반", 70L, "리프의돌", 71L);
-        pokemonEvolutions[30] = new Evolution(72L, "일반", 73L, "X", -1L);
-        pokemonEvolutions[31] = new Evolution(74L, "일반", 75L, "통신", 76L);
-        pokemonEvolutions[32] = new Evolution(77L, "일반", 78L, "X", -1L);
-        pokemonEvolutions[33] = new Evolution(79L, "일반", 80L, "X", -1L);
-        pokemonEvolutions[34] = new Evolution(81L, "일반", 82L, "X", -1L);
-        pokemonEvolutions[35] = new Evolution(84L, "일반", 85L, "X", -1L);
-        pokemonEvolutions[36] = new Evolution(86L, "일반", 87L, "X", -1L);
-        pokemonEvolutions[37] = new Evolution(88L, "일반", 89L, "X", -1L);
-        pokemonEvolutions[38] = new Evolution(90L, "물의돌", 91L, "X", -1L);
-        pokemonEvolutions[39] = new Evolution(92L, "일반", 93L, "통신", 94L);
-        pokemonEvolutions[40] = new Evolution(96L, "일반", 97L, "X", -1L);
-        pokemonEvolutions[41] = new Evolution(98L, "일반", 99L, "X", -1L);
-        pokemonEvolutions[42] = new Evolution(100L, "일반", 101L, "X", -1L);
-        pokemonEvolutions[43] = new Evolution(102L, "리프의돌", 103L, "X", -1L);
-        pokemonEvolutions[44] = new Evolution(104L, "일반", 105L, "X", -1L);
-        pokemonEvolutions[45] = new Evolution(109L, "일반", 110L, "X", -1L);
-        pokemonEvolutions[46] = new Evolution(111L, "일반", 112L, "X", -1L);
-        pokemonEvolutions[47] = new Evolution(116L, "일반", 117L, "X", -1L);
-        pokemonEvolutions[48] = new Evolution(118L, "일반", 119L, "X", -1L);
-        pokemonEvolutions[49] = new Evolution(120L, "물의돌", 121L, "X", -1L);
-        pokemonEvolutions[50] = new Evolution(129L, "일반", 130L, "X", -1L);
-        pokemonEvolutions[51] = new Evolution(133L, "물의돌", 134L, "X", -1L);
-        pokemonEvolutions[52] = new Evolution(133L, "천둥의돌", 135L, "X", -1L);
-        pokemonEvolutions[53] = new Evolution(133L, "불꽃의돌", 136L, "X", -1L);
-        pokemonEvolutions[54] = new Evolution(138L, "일반", 139L, "X", -1L);
-        pokemonEvolutions[55] = new Evolution(140L, "일반", 141L, "X", -1L);
-        pokemonEvolutions[56] = new Evolution(147L, "일반", 148L, "일반", 149L);
-
-        for (int i = 1; i < 57; i++) {
-            Pokemon pokemon = pokemonRepository.findById(pokemonEvolutions[i].pokemonId).orElse(null);
-
-            PokemonEvolution pokemonEvolution = new PokemonEvolution();
-            pokemonEvolution.setPokemon(pokemon);
-            pokemonEvolution.setFirstMethod(pokemonEvolutions[i].firstMethod);
-            pokemonEvolution.setFirstEvolutionId(pokemonEvolutions[i].firstEvolutionId);
-            pokemonEvolution.setSecondMethod(pokemonEvolutions[i].secondMethod);
-            pokemonEvolution.setSecondEvolutionId(pokemonEvolutions[i].secondEvolutionId);
-
-            pokemonEvolutionRepository.save(pokemonEvolution);
-        }
-    }
-
-    @Test
-    void 포켓몬_사진_생성() {
-        int num = 1;
-        for (Long id = 1L; id <= 151; id++) {
-            Pokemon pokemon = pokemonRepository.findById(id).orElse(null);
-            for (int i = 1; i <= pictureCnt[id.intValue()]; i++, num++) {
-                String grayPicture = pokemonGrayPictureUrls[num];
-                String colorPicture = pokemonColorPictureUrls[num];
-
-                PokemonPicture pokemonPicture = new PokemonPicture();
-                pokemonPicture.setPokemon(pokemon);
-                pokemonPicture.setPokemonNum(i);
-                pokemonPicture.setPokemonGrayImageUrl(grayPicture);
-                pokemonPicture.setPokemonColorImageUrl(colorPicture);
-
-                pokemonPictureRepository.save(pokemonPicture);
-            }
-        }
-    }
-
-    @Test
-    void 뱃지_생성() {
-        int N = badgeIds.length;
-        for (int i = 0; i < N; i++) {
-            Badge badge = new Badge();
-            badge.setBadgeId(badgeIds[i]);
-            badge.setBadgeImageUrl(badgeImageUrls[i]);
-
-            badgeRepository.save(badge);
-        }
-    }
+//    @Test
+//    void 포켓몬_데이터_생성() {
+//        for (Long id = 1L; id <= 151; id++) {
+//            pokemon.setPokemonId(id);
+//            pokemon.setPokemonName(pokemonNames[id.intValue()]);
+//            pokemon.setKind(kinds[id.intValue()]);
+//            pokemon.setColor(colors[id.intValue()]);
+//            pokemon.setDescription(descriptions[id.intValue()]);
+//            pokemon.setIsEvolution(isEvolutions[id.intValue()]);
+//
+//            pokemonRepository.save(pokemon);
+//        }
+//    }
+//
+//    @Test
+//    void 포켓몬_타입_생성() {
+//        for (int i = 1; i <= 151; i++) pokemonTypeList[i] = new ArrayList<>();
+//        pokemonTypeList[1].add("풀");
+//        pokemonTypeList[1].add("독");
+//        pokemonTypeList[2].add("풀");
+//        pokemonTypeList[2].add("독");
+//        pokemonTypeList[3].add("풀");
+//        pokemonTypeList[3].add("독");
+//        pokemonTypeList[4].add("불꽃");
+//        pokemonTypeList[5].add("불꽃");
+//        pokemonTypeList[6].add("불꽃");
+//        pokemonTypeList[6].add("비행");
+//        pokemonTypeList[7].add("물");
+//        pokemonTypeList[8].add("물");
+//        pokemonTypeList[9].add("물");
+//        pokemonTypeList[10].add("벌레");
+//        pokemonTypeList[11].add("벌레");
+//        pokemonTypeList[12].add("벌레");
+//        pokemonTypeList[12].add("비행");
+//        pokemonTypeList[13].add("벌레");
+//        pokemonTypeList[13].add("독");
+//        pokemonTypeList[14].add("벌레");
+//        pokemonTypeList[14].add("독");
+//        pokemonTypeList[15].add("벌레");
+//        pokemonTypeList[15].add("독");
+//        pokemonTypeList[16].add("노말");
+//        pokemonTypeList[16].add("비행");
+//        pokemonTypeList[17].add("노말");
+//        pokemonTypeList[17].add("비행");
+//        pokemonTypeList[18].add("노말");
+//        pokemonTypeList[18].add("비행");
+//        pokemonTypeList[19].add("노말");
+//        pokemonTypeList[20].add("노말");
+//        pokemonTypeList[21].add("노말");
+//        pokemonTypeList[21].add("비행");
+//        pokemonTypeList[22].add("노말");
+//        pokemonTypeList[22].add("비행");
+//        pokemonTypeList[23].add("독");
+//        pokemonTypeList[24].add("독");
+//        pokemonTypeList[25].add("전기");
+//        pokemonTypeList[26].add("전기");
+//        pokemonTypeList[27].add("땅");
+//        pokemonTypeList[28].add("땅");
+//        pokemonTypeList[29].add("독");
+//        pokemonTypeList[30].add("독");
+//        pokemonTypeList[31].add("독");
+//        pokemonTypeList[31].add("땅");
+//        pokemonTypeList[32].add("독");
+//        pokemonTypeList[33].add("독");
+//        pokemonTypeList[34].add("독");
+//        pokemonTypeList[34].add("땅");
+//        pokemonTypeList[35].add("노말");
+//        pokemonTypeList[36].add("노말");
+//        pokemonTypeList[37].add("불꽃");
+//        pokemonTypeList[38].add("불꽃");
+//        pokemonTypeList[39].add("노말");
+//        pokemonTypeList[40].add("노말");
+//        pokemonTypeList[41].add("독");
+//        pokemonTypeList[41].add("비행");
+//        pokemonTypeList[42].add("독");
+//        pokemonTypeList[42].add("비행");
+//        pokemonTypeList[43].add("풀");
+//        pokemonTypeList[43].add("독");
+//        pokemonTypeList[44].add("풀");
+//        pokemonTypeList[44].add("독");
+//        pokemonTypeList[45].add("풀");
+//        pokemonTypeList[45].add("독");
+//        pokemonTypeList[46].add("벌레");
+//        pokemonTypeList[46].add("풀");
+//        pokemonTypeList[47].add("벌레");
+//        pokemonTypeList[47].add("풀");
+//        pokemonTypeList[48].add("벌레");
+//        pokemonTypeList[48].add("독");
+//        pokemonTypeList[49].add("벌레");
+//        pokemonTypeList[49].add("독");
+//        pokemonTypeList[50].add("땅");
+//        pokemonTypeList[51].add("땅");
+//        pokemonTypeList[52].add("노말");
+//        pokemonTypeList[53].add("노말");
+//        pokemonTypeList[54].add("물");
+//        pokemonTypeList[55].add("물");
+//        pokemonTypeList[56].add("격투");
+//        pokemonTypeList[57].add("격투");
+//        pokemonTypeList[58].add("불꽃");
+//        pokemonTypeList[59].add("불꽃");
+//        pokemonTypeList[60].add("물");
+//        pokemonTypeList[61].add("물");
+//        pokemonTypeList[62].add("물");
+//        pokemonTypeList[62].add("격투");
+//        pokemonTypeList[63].add("에스퍼");
+//        pokemonTypeList[64].add("에스퍼");
+//        pokemonTypeList[65].add("에스퍼");
+//        pokemonTypeList[66].add("격투");
+//        pokemonTypeList[67].add("격투");
+//        pokemonTypeList[68].add("격투");
+//        pokemonTypeList[69].add("풀");
+//        pokemonTypeList[69].add("독");
+//        pokemonTypeList[70].add("풀");
+//        pokemonTypeList[70].add("독");
+//        pokemonTypeList[71].add("풀");
+//        pokemonTypeList[71].add("독");
+//        pokemonTypeList[72].add("물");
+//        pokemonTypeList[72].add("독");
+//        pokemonTypeList[73].add("물");
+//        pokemonTypeList[73].add("독");
+//        pokemonTypeList[74].add("바위");
+//        pokemonTypeList[74].add("땅");
+//        pokemonTypeList[75].add("바위");
+//        pokemonTypeList[75].add("땅");
+//        pokemonTypeList[76].add("바위");
+//        pokemonTypeList[76].add("땅");
+//        pokemonTypeList[77].add("불꽃");
+//        pokemonTypeList[78].add("불꽃");
+//        pokemonTypeList[79].add("물");
+//        pokemonTypeList[79].add("에스퍼");
+//        pokemonTypeList[80].add("물");
+//        pokemonTypeList[80].add("에스퍼");
+//        pokemonTypeList[81].add("전기");
+//        pokemonTypeList[82].add("전기");
+//        pokemonTypeList[83].add("노말");
+//        pokemonTypeList[83].add("비행");
+//        pokemonTypeList[84].add("노말");
+//        pokemonTypeList[84].add("비행");
+//        pokemonTypeList[85].add("노말");
+//        pokemonTypeList[85].add("비행");
+//        pokemonTypeList[86].add("물");
+//        pokemonTypeList[87].add("물");
+//        pokemonTypeList[87].add("얼음");
+//        pokemonTypeList[88].add("독");
+//        pokemonTypeList[89].add("독");
+//        pokemonTypeList[90].add("물");
+//        pokemonTypeList[91].add("물");
+//        pokemonTypeList[91].add("얼음");
+//        pokemonTypeList[92].add("고스트");
+//        pokemonTypeList[92].add("독");
+//        pokemonTypeList[93].add("고스트");
+//        pokemonTypeList[93].add("독");
+//        pokemonTypeList[94].add("고스트");
+//        pokemonTypeList[94].add("독");
+//        pokemonTypeList[95].add("바위");
+//        pokemonTypeList[95].add("땅");
+//        pokemonTypeList[96].add("에스퍼");
+//        pokemonTypeList[97].add("에스퍼");
+//        pokemonTypeList[98].add("물");
+//        pokemonTypeList[99].add("물");
+//        pokemonTypeList[100].add("전기");
+//        pokemonTypeList[101].add("전기");
+//        pokemonTypeList[102].add("풀");
+//        pokemonTypeList[102].add("에스퍼");
+//        pokemonTypeList[103].add("풀");
+//        pokemonTypeList[103].add("에스퍼");
+//        pokemonTypeList[104].add("땅");
+//        pokemonTypeList[105].add("땅");
+//        pokemonTypeList[106].add("격투");
+//        pokemonTypeList[107].add("격투");
+//        pokemonTypeList[108].add("노말");
+//        pokemonTypeList[109].add("독");
+//        pokemonTypeList[110].add("독");
+//        pokemonTypeList[111].add("땅");
+//        pokemonTypeList[111].add("바위");
+//        pokemonTypeList[112].add("땅");
+//        pokemonTypeList[112].add("바위");
+//        pokemonTypeList[113].add("노말");
+//        pokemonTypeList[114].add("풀");
+//        pokemonTypeList[115].add("노말");
+//        pokemonTypeList[116].add("물");
+//        pokemonTypeList[117].add("물");
+//        pokemonTypeList[118].add("물");
+//        pokemonTypeList[119].add("물");
+//        pokemonTypeList[120].add("물");
+//        pokemonTypeList[121].add("물");
+//        pokemonTypeList[121].add("에스퍼");
+//        pokemonTypeList[122].add("에스퍼");
+//        pokemonTypeList[123].add("벌레");
+//        pokemonTypeList[123].add("비행");
+//        pokemonTypeList[124].add("얼음");
+//        pokemonTypeList[124].add("에스퍼");
+//        pokemonTypeList[125].add("전기");
+//        pokemonTypeList[126].add("불꽃");
+//        pokemonTypeList[127].add("벌레");
+//        pokemonTypeList[128].add("노말");
+//        pokemonTypeList[129].add("물");
+//        pokemonTypeList[130].add("물");
+//        pokemonTypeList[130].add("비행");
+//        pokemonTypeList[131].add("물");
+//        pokemonTypeList[131].add("얼음");
+//        pokemonTypeList[132].add("노말");
+//        pokemonTypeList[133].add("노말");
+//        pokemonTypeList[134].add("물");
+//        pokemonTypeList[135].add("전기");
+//        pokemonTypeList[136].add("불꽃");
+//        pokemonTypeList[137].add("노말");
+//        pokemonTypeList[138].add("바위");
+//        pokemonTypeList[138].add("물");
+//        pokemonTypeList[139].add("바위");
+//        pokemonTypeList[139].add("물");
+//        pokemonTypeList[140].add("바위");
+//        pokemonTypeList[140].add("물");
+//        pokemonTypeList[141].add("바위");
+//        pokemonTypeList[141].add("물");
+//        pokemonTypeList[142].add("바위");
+//        pokemonTypeList[142].add("비행");
+//        pokemonTypeList[143].add("노말");
+//        pokemonTypeList[144].add("얼음");
+//        pokemonTypeList[144].add("비행");
+//        pokemonTypeList[145].add("전기");
+//        pokemonTypeList[145].add("비행");
+//        pokemonTypeList[146].add("불꽃");
+//        pokemonTypeList[146].add("비행");
+//        pokemonTypeList[147].add("드래곤");
+//        pokemonTypeList[148].add("드래곤");
+//        pokemonTypeList[149].add("드래곤");
+//        pokemonTypeList[149].add("비행");
+//        pokemonTypeList[150].add("에스퍼");
+//        pokemonTypeList[151].add("에스퍼");
+//
+//        for (Long id = 1L; id <= 151L; id++) {
+//            for (int j = 0; j < pokemonTypeList[id.intValue()].size(); j++) {
+//                Pokemon pokemon = pokemonRepository.findById(id).orElse(null);
+//
+//                PokemonType pokemonType = new PokemonType();
+//                pokemonType.setPokemon(pokemon);
+//                pokemonType.setTypeNumber(j + 1);
+//                pokemonType.setPokemonType(pokemonTypeList[id.intValue()].get(j));
+//                pokemonTypeRepository.save(pokemonType);
+//            }
+//        }
+//    }
+//
+//    @Test
+//    void 포켓몬_진화_생성() {
+//        pokemonEvolutions[1] = new Evolution(1L, "일반", 2L, "일반", 3L);
+//        pokemonEvolutions[2] = new Evolution(4L, "일반", 5L, "일반", 6L);
+//        pokemonEvolutions[3] = new Evolution(7L, "일반", 8L, "일반", 9L);
+//        pokemonEvolutions[4] = new Evolution(10L, "일반", 11L, "일반", 12L);
+//        pokemonEvolutions[5] = new Evolution(13L, "일반", 14L, "일반", 15L);
+//        pokemonEvolutions[6] = new Evolution(16L, "일반", 17L, "일반", 18L);
+//        pokemonEvolutions[7] = new Evolution(19L, "일반", 20L, "X", -1L);
+//        pokemonEvolutions[8] = new Evolution(21L, "일반", 22L, "X", -1L);
+//        pokemonEvolutions[9] = new Evolution(23L, "일반", 24L, "X", -1L);
+//        pokemonEvolutions[10] = new Evolution(25L, "천둥의돌", 26L, "X", -1L);
+//        pokemonEvolutions[11] = new Evolution(27L, "일반", 28L, "X", -1L);
+//        pokemonEvolutions[12] = new Evolution(29L, "일반", 30L, "달의돌", 31L);
+//        pokemonEvolutions[13] = new Evolution(32L, "일반", 33L, "달의돌", 34L);
+//        pokemonEvolutions[14] = new Evolution(35L, "달의돌", 36L, "X", -1L);
+//        pokemonEvolutions[15] = new Evolution(37L, "불꽃의돌", 38L, "X", -1L);
+//        pokemonEvolutions[16] = new Evolution(39L, "달의돌", 40L, "X", -1L);
+//        pokemonEvolutions[17] = new Evolution(41L, "일반", 42L, "X", -1L);
+//        pokemonEvolutions[18] = new Evolution(43L, "일반", 44L, "리프의돌", 45L);
+//        pokemonEvolutions[19] = new Evolution(46L, "일반", 47L, "X", -1L);
+//        pokemonEvolutions[20] = new Evolution(48L, "일반", 49L, "X", -1L);
+//        pokemonEvolutions[21] = new Evolution(50L, "일반", 51L, "X", -1L);
+//        pokemonEvolutions[22] = new Evolution(52L, "일반", 53L, "X", -1L);
+//        pokemonEvolutions[23] = new Evolution(54L, "일반", 55L, "X", -1L);
+//        pokemonEvolutions[24] = new Evolution(56L, "일반", 57L, "X", -1L);
+//        pokemonEvolutions[25] = new Evolution(58L, "불꽃의돌", 59L, "X", -1L);
+//        pokemonEvolutions[26] = new Evolution(60L, "일반", 61L, "물의돌", 62L);
+//        pokemonEvolutions[27] = new Evolution(63L, "일반", 64L, "통신", 65L);
+//        pokemonEvolutions[28] = new Evolution(66L, "일반", 67L, "통신", 68L);
+//        pokemonEvolutions[29] = new Evolution(69L, "일반", 70L, "리프의돌", 71L);
+//        pokemonEvolutions[30] = new Evolution(72L, "일반", 73L, "X", -1L);
+//        pokemonEvolutions[31] = new Evolution(74L, "일반", 75L, "통신", 76L);
+//        pokemonEvolutions[32] = new Evolution(77L, "일반", 78L, "X", -1L);
+//        pokemonEvolutions[33] = new Evolution(79L, "일반", 80L, "X", -1L);
+//        pokemonEvolutions[34] = new Evolution(81L, "일반", 82L, "X", -1L);
+//        pokemonEvolutions[35] = new Evolution(84L, "일반", 85L, "X", -1L);
+//        pokemonEvolutions[36] = new Evolution(86L, "일반", 87L, "X", -1L);
+//        pokemonEvolutions[37] = new Evolution(88L, "일반", 89L, "X", -1L);
+//        pokemonEvolutions[38] = new Evolution(90L, "물의돌", 91L, "X", -1L);
+//        pokemonEvolutions[39] = new Evolution(92L, "일반", 93L, "통신", 94L);
+//        pokemonEvolutions[40] = new Evolution(96L, "일반", 97L, "X", -1L);
+//        pokemonEvolutions[41] = new Evolution(98L, "일반", 99L, "X", -1L);
+//        pokemonEvolutions[42] = new Evolution(100L, "일반", 101L, "X", -1L);
+//        pokemonEvolutions[43] = new Evolution(102L, "리프의돌", 103L, "X", -1L);
+//        pokemonEvolutions[44] = new Evolution(104L, "일반", 105L, "X", -1L);
+//        pokemonEvolutions[45] = new Evolution(109L, "일반", 110L, "X", -1L);
+//        pokemonEvolutions[46] = new Evolution(111L, "일반", 112L, "X", -1L);
+//        pokemonEvolutions[47] = new Evolution(116L, "일반", 117L, "X", -1L);
+//        pokemonEvolutions[48] = new Evolution(118L, "일반", 119L, "X", -1L);
+//        pokemonEvolutions[49] = new Evolution(120L, "물의돌", 121L, "X", -1L);
+//        pokemonEvolutions[50] = new Evolution(129L, "일반", 130L, "X", -1L);
+//        pokemonEvolutions[51] = new Evolution(133L, "물의돌", 134L, "X", -1L);
+//        pokemonEvolutions[52] = new Evolution(133L, "천둥의돌", 135L, "X", -1L);
+//        pokemonEvolutions[53] = new Evolution(133L, "불꽃의돌", 136L, "X", -1L);
+//        pokemonEvolutions[54] = new Evolution(138L, "일반", 139L, "X", -1L);
+//        pokemonEvolutions[55] = new Evolution(140L, "일반", 141L, "X", -1L);
+//        pokemonEvolutions[56] = new Evolution(147L, "일반", 148L, "일반", 149L);
+//
+//        for (int i = 1; i < 57; i++) {
+//            Pokemon pokemon = pokemonRepository.findById(pokemonEvolutions[i].pokemonId).orElse(null);
+//
+//            PokemonEvolution pokemonEvolution = new PokemonEvolution();
+//            pokemonEvolution.setPokemon(pokemon);
+//            pokemonEvolution.setFirstMethod(pokemonEvolutions[i].firstMethod);
+//            pokemonEvolution.setFirstEvolutionId(pokemonEvolutions[i].firstEvolutionId);
+//            pokemonEvolution.setSecondMethod(pokemonEvolutions[i].secondMethod);
+//            pokemonEvolution.setSecondEvolutionId(pokemonEvolutions[i].secondEvolutionId);
+//
+//            pokemonEvolutionRepository.save(pokemonEvolution);
+//        }
+//    }
+//
+//    @Test
+//    void 포켓몬_사진_생성() {
+//        int num = 1;
+//        for (Long id = 1L; id <= 151; id++) {
+//            Pokemon pokemon = pokemonRepository.findById(id).orElse(null);
+//            for (int i = 1; i <= pictureCnt[id.intValue()]; i++, num++) {
+//                String grayPicture = pokemonGrayPictureUrls[num];
+//                String colorPicture = pokemonColorPictureUrls[num];
+//
+//                PokemonPicture pokemonPicture = new PokemonPicture();
+//                pokemonPicture.setPokemon(pokemon);
+//                pokemonPicture.setPokemonNum(i);
+//                pokemonPicture.setPokemonGrayImageUrl(grayPicture);
+//                pokemonPicture.setPokemonColorImageUrl(colorPicture);
+//
+//                pokemonPictureRepository.save(pokemonPicture);
+//            }
+//        }
+//    }
+//
+//    @Test
+//    void 뱃지_생성() {
+//        int N = badgeIds.length;
+//        for (int i = 0; i < N; i++) {
+//            Badge badge = new Badge();
+//            badge.setBadgeId(badgeIds[i]);
+//            badge.setBadgeImageUrl(badgeImageUrls[i]);
+//
+//            badgeRepository.save(badge);
+//        }
+//    }
 }
