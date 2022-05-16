@@ -7,8 +7,6 @@ import com.urmine.db.entity.User;
 import com.urmine.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -170,9 +168,7 @@ public class UserServiceImpl implements UserService {
          * 유저가 회원가입하여 DB에 저장하는 메소드
          */
 
-        // TODO Add more
-
-        return null;
+        return UserGetRes.of(userRepository.save(userGetRes.toUser()));
     }
 
     @Override
@@ -181,8 +177,10 @@ public class UserServiceImpl implements UserService {
          * 유저 토근을 갱신하는 메소드
          */
 
-        // TODO Add more
+        User user = userRepository.findUserByAccountEmail(accountEmail).orElse(null);
+        user.setAccessToken(tokens.get("accessToken"));
+        user.setRefreshToken(tokens.get("refreshToken"));
 
-        return null;
+        return UserGetRes.of(userRepository.save(user));
     }
 }
