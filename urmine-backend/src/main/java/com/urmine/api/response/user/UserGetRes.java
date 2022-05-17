@@ -1,4 +1,4 @@
-package com.urmine.api.response;
+package com.urmine.api.response.user;
 
 import com.google.gson.JsonElement;
 import com.urmine.db.entity.User;
