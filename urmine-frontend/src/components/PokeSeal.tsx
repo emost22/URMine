@@ -1,4 +1,13 @@
+import { MouseEvent } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+`;
 
 const Seal = styled.div`
   width: 200px;
@@ -46,6 +55,31 @@ const Img = styled.img`
   transform: translate(-50%, -46%);
 `;
 
+const CountBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid ${(props) => props.color};
+`;
+
+const CountBtn = styled.button`
+  width: 50px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: ${(props) => props.color};
+  font-size: 16px;
+  font-weight: 500;
+`;
+
+const Count = styled.div`
+  font-size: 16px;
+`;
+
 interface PokeSealProps {
   pokemonId: number;
   pokemonName: string;
@@ -61,19 +95,44 @@ function PokeSeal({
   colorImgUrl,
   color,
 }: PokeSealProps) {
+  const [count, setCount] = useState(0);
+
   const make3Digit = (id: number) => {
     const strId = "000" + id;
     return strId.slice(strId.length - 3);
   };
 
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const {
+      currentTarget: { innerText },
+    } = e;
+    if (innerText === "+") {
+      setCount((prev) => prev + 1);
+    } else {
+      if (count <= 0) return;
+      setCount((prev) => prev - 1);
+    }
+  };
+
   return (
-    <Seal>
-      <InfoBox>
-        <Id color={color}>{make3Digit(pokemonId)}</Id>
-        <Name>{pokemonName}</Name>
-      </InfoBox>
-      <Img src={colorImgUrl} alt={pokemonName} />
-    </Seal>
+    <Container>
+      <Seal>
+        <InfoBox>
+          <Id color={color}>{make3Digit(pokemonId)}</Id>
+          <Name>{pokemonName}</Name>
+        </InfoBox>
+        <Img src={count >= 1 ? colorImgUrl : grayImgUrl} alt={pokemonName} />
+      </Seal>
+      <CountBox color={color}>
+        <CountBtn color={color} onClick={handleClick}>
+          -
+        </CountBtn>
+        <Count>{count}</Count>
+        <CountBtn color={color} onClick={handleClick}>
+          +
+        </CountBtn>
+      </CountBox>
+    </Container>
   );
 }
 
