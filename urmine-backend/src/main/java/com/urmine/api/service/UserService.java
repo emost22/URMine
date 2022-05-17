@@ -1,6 +1,6 @@
 package com.urmine.api.service;
 
-import com.urmine.api.response.UserGetRes;
+import com.urmine.api.response.user.UserGetRes;
 
 import java.util.HashMap;
 

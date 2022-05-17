@@ -1,6 +1,6 @@
 package com.urmine.api.controller;
 
-import com.urmine.api.response.UserGetRes;
+import com.urmine.api.response.user.UserGetRes;
 import com.urmine.api.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
