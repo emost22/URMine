@@ -18,7 +18,6 @@ public class Pokemon {
     String kind;
     String color;
     String description;
-    Boolean isEvolution;
 
     @OneToMany(mappedBy = "pokemon", cascade = CascadeType.ALL)
     List<PokemonType> pokemonTypeList = new ArrayList<>();
