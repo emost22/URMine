@@ -2,7 +2,7 @@ package com.urmine.api.service;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.urmine.api.response.UserGetRes;
+import com.urmine.api.response.user.UserGetRes;
 import com.urmine.db.entity.User;
 import com.urmine.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
