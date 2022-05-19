@@ -38,7 +38,7 @@ const Icon = styled.img`
 const IconDesc = styled.span`
   font-size: 12px;
   text-align: center;
-  width: 40px;
+  width: 50px;
 `;
 
 function Header() {
