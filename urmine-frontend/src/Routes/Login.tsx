@@ -7,10 +7,11 @@ const Container = styled.div`
 `;
 
 const LoginImg = styled.img`
+  width: 400px;
   position: relative;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 `;
 
 function Login() {

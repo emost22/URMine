@@ -42,7 +42,8 @@ const IconDesc = styled.span`
 `;
 
 function Header() {
-  const isLogin = false;
+  const isLogin = true;
+
   return (
     <Head>
       <Link to={"/"}>
@@ -55,7 +56,7 @@ function Header() {
               <Icon src="/images/monsterball.png" alt="pokedex" />
               <IconDesc>내 도감</IconDesc>
             </StyledLink>
-            <StyledLink to={"/profile"}>
+            <StyledLink to={"/user/1"}>
               <Icon src="/images/profile.png" alt="profile" />
               <IconDesc>프로필</IconDesc>
             </StyledLink>
