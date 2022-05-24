@@ -1,5 +1,6 @@
 package com.urmine.api.service;
 
+import com.urmine.api.response.pokemonevolution.PokemonEvolutionGetRes;
 import com.urmine.api.response.pokemon.PokemonGetRes;
 import com.urmine.db.repository.PokemonEvolutionRepository;
 import com.urmine.db.repository.PokemonRepository;
@@ -31,5 +32,15 @@ public class PokemonServiceImpl implements PokemonService {
         // TODO Add more
 
         return pokemonGetResList;
+    }
+
+    @Override
+    public List<PokemonEvolutionGetRes> getPokemonEvolution(Long pokemonId) {
+        /*
+         * 해당 포켓몬의 진화 정보를 조회하는 메소드
+         */
+
+        return pokemonEvolutionRepository.findPokemonEvolutionByPokemon_PokemonIdOrFirstEvolutionIdOrSecondEvolutionId(pokemonId, pokemonId, pokemonId).stream()
+                .map(pokemonEvolution -> PokemonEvolutionGetRes.of(pokemonEvolution)).collect(Collectors.toList());
     }
 }
