@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
  * Pokemon 정보 관리를 위한 ServiceImpl
@@ -24,8 +25,11 @@ public class PokemonServiceImpl implements PokemonService {
          * 모든 포켓몬의 정보를 조회하는 메소드
          */
 
+        List<PokemonGetRes> pokemonGetResList = pokemonRepository.findAll().stream()
+                .map(pokemon -> PokemonGetRes.of(pokemon)).collect(Collectors.toList());
+
         // TODO Add more
 
-        return null;
+        return pokemonGetResList;
     }
 }
