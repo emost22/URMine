@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { getKakaoLoginPage } from "../api/user";
 import Typeit from "../components/Typeit";
 
 const Container = styled.div`
@@ -15,10 +16,19 @@ const LoginImg = styled.img`
 `;
 
 function Login() {
+  async function onClick() {
+    const url = await getKakaoLoginPage();
+    window.location.href = url;
+  }
+
   return (
     <Container>
       <Typeit />
-      <LoginImg src="/images/kakao_login_large_wide.png" alt="login" />
+      <LoginImg
+        src="/images/kakao_login_large_wide.png"
+        alt="login"
+        onClick={onClick}
+      />
     </Container>
   );
 }
