@@ -1,6 +1,7 @@
 package com.urmine.api.service;
 
 import com.urmine.api.response.pokemon.PokemonGetRes;
+import com.urmine.api.response.pokemonevolution.PokemonEvolutionGetRes;
 
 import java.util.List;
 
@@ -9,4 +10,5 @@ import java.util.List;
  */
 public interface PokemonService {
     public List<PokemonGetRes> findAllPokemon();
+    public List<PokemonEvolutionGetRes> getPokemonEvolution(Long pokemonId);
 }
