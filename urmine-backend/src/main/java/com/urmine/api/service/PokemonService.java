@@ -11,4 +11,5 @@ import java.util.List;
 public interface PokemonService {
     public List<PokemonGetRes> findAllPokemon();
     public List<PokemonEvolutionGetRes> getPokemonEvolution(Long pokemonId);
+    public PokemonGetRes findPokemonByPokemonId(Long pokemonId);
 }
