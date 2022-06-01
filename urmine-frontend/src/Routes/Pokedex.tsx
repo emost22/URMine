@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { getToken } from "../api/user";
 import PokeSeal from "../components/PokeSeal";
 import Search from "../components/Search";
 
@@ -278,7 +281,25 @@ const PokeContainer = styled.main`
   gap: 60px 0px;
 `;
 
+let code = new URL(window.location.href).searchParams.get("code");
+
 function Pokedex() {
+  const navigate = useNavigate();
+
+  async function kakaoLogin(code: string) {
+    const data = JSON.parse(await getToken(code));
+    if (data.status !== 500) {
+      localStorage.setItem("accessToken", data.accessToken);
+      navigate("/pokedex");
+    }
+  }
+
+  useEffect(() => {
+    if (code !== null) {
+      kakaoLogin(code);
+    }
+  }, []);
+
   return (
     <>
       <Search></Search>
