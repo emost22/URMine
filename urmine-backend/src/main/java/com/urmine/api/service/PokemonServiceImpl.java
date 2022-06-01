@@ -29,7 +29,12 @@ public class PokemonServiceImpl implements PokemonService {
         List<PokemonGetRes> pokemonGetResList = pokemonRepository.findAll().stream()
                 .map(pokemon -> PokemonGetRes.of(pokemon)).collect(Collectors.toList());
 
-        // TODO Add more
+        int N = pokemonGetResList.size();
+        for (int i = 0; i < N; i++) {
+            long pokemonId = pokemonGetResList.get(i).getPokemonId();
+
+            pokemonGetResList.get(i).setPokemonEvolutionGetResList(getPokemonEvolution(pokemonId));
+        }
 
         return pokemonGetResList;
     }

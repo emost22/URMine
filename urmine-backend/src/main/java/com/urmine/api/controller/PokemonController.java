@@ -39,6 +39,6 @@ public class PokemonController {
 
         // TODO Add more
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(pokemonService.findAllPokemon(), HttpStatus.OK);
     }
 }
