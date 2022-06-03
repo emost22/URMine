@@ -40,6 +40,16 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
+    public PokemonGetRes findPokemonByPokemonId(Long pokemonId) {
+        /*
+         * 특정 포켓몬의 정보를 조회하는 메소드
+         */
+
+        // TODO Add more
+
+        return null;
+    }
+
     public List<PokemonEvolutionGetRes> getPokemonEvolution(Long pokemonId) {
         /*
          * 해당 포켓몬의 진화 정보를 조회하는 메소드
