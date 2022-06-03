@@ -64,7 +64,6 @@ public class DataSample {
 //            pokemon.setKind(kinds[id.intValue()]);
 //            pokemon.setColor(colors[id.intValue()]);
 //            pokemon.setDescription(descriptions[id.intValue()]);
-//            pokemon.setIsEvolution(isEvolutions[id.intValue()]);
 //
 //            pokemonRepository.save(pokemon);
 //        }
