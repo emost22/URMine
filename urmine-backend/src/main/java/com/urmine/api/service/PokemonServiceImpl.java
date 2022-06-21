@@ -45,9 +45,10 @@ public class PokemonServiceImpl implements PokemonService {
          * 특정 포켓몬의 정보를 조회하는 메소드
          */
 
-        // TODO Add more
+        PokemonGetRes pokemonGetRes = PokemonGetRes.of(pokemonRepository.findById(pokemonId).orElse(null));
+        pokemonGetRes.setPokemonEvolutionGetResList(getPokemonEvolution(pokemonGetRes.getPokemonId()));
 
-        return null;
+        return pokemonGetRes;
     }
 
     public List<PokemonEvolutionGetRes> getPokemonEvolution(Long pokemonId) {
